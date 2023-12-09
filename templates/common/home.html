@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    img {
+        width: 20%;
+        height: auto;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container my-3">
+    <table class="table">
+        <thead>
+            <tr class="table-dark" align="center">
+                <th>Pokedex</th>
+                <th>Pybo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center">
+                <!--url은 네임스페이스와 별칭으로 지정되어 있다. -->
+                <td>
+                    <a href="{% url 'pokedex:index' %}">
+                        도감
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'pybo:index' %}">
+                        Pybo
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    {% comment %} <a class="btn btn-primary">Hi</a> {% endcomment %}
+</div>
+
+{% endblock %}
