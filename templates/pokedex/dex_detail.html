@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <img src='pokemon.url'>
-    <table class="table">
+    <div style="margin-left:45%; width:400px;">
+        <img src='{{url}}'>
+    </div>
+    
+    <table class="table" style="width:800px; margin:auto;">
     <tr>
         <th>이름</th>
         <td>{{ pokemon.name }}</td>
