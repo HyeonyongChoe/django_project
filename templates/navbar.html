@@ -1,7 +1,21 @@
 <!-- 네비게이션바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'pybo:index' %}">ProjectHY</a>
+        <!--Pybo 페이지일때 표시될 로고와 링크-->
+        {% if question_list %}
+        <a class="navbar-brand" href="{% url 'pybo:index' %}">Pybo</a>
+        <!--Game 페이지일때 표시될 로고와 링크-->
+        {% elif pokename %}
+        <a class="navbar-brand" href="{% url 'pokedex:index' %}">Pokedex</a>
+        <!--아닐 경우 표시될 로고와 링크-->
+        {% else %}
+        <a class="navbar-brand" href="{% url 'common:index' %}">ProjectHY</a>
+        {% endif %}
+        <!--home 버튼-->
+        <a class="navbar-brand" href="{% url 'common:index' %}">
+            {% load static %}
+            <img class="nav-img" src="{% static 'home.png' %}" width="30px" >
+        </a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"

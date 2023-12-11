@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <img src='pokemon.url'>
+    <table class="table">
+    <tr>
+        <th>이름</th>
+        <td>{{ pokemon.name }}</td>
+        <th>타입</th>
+        <td>{{ pokemon.type }}</td>
+    </tr>
+    <tr>
+        <th>키</th>
+        <td>{{ pokemon.height }}</td>
+        <th>몸무게</th>
+        <td>{{ pokemon.weight }}</td>
+    </tr>
+    </table>
+{% endblock %}

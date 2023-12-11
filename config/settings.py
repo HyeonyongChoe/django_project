@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'pybo.apps.PyboConfig',
-    # 'pokedex.app.PokedexConfig',
+    'pokedex.apps.PokedexConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,6 +75,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+DATABASE_ROUTERS = [
+    'pokedex.dbrouter.MultiDBRouter',
+]
 
 DATABASES = {
     'default': {
